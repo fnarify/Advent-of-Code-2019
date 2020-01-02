@@ -1,0 +1,32 @@
+                                                                        sick bay
+                                                                           
+                                                                           |
+
+hot chocolate  -----------  engineering  -------  navigation  --------   storage
+                            (escape pod)            (coin)               (lava)
+
+                                |
+kitchen  ----   passages        |                      
+(loop)         (astrolabe)      |
+                                |
+ |                               
+                              START        --------------------          corridor   ---------   gift  --------------  observatory   -----    security
+holodeck                                                                  (cake)              (photon)               (giant magnet)              
+                                |                                                                                                                |
+ |                              |                                            |
+ 
+ warp   -----------------     arcade             crew quarters  ------   science lab  ------------   hallway   ----------  stables      pressure sensitive floor
+(sand)                     (food ration)             (jam)                (ornament)            (weather machine)               
+                                                                                                                                                
+                                                                                                                                                 |
+
+
+                                                                                                                                                GOAL
+
+NEEDED ITEMS:
+astrolabe
+ornament
+weather machine
+food ration
+
+to pass pressure sensitive floor
