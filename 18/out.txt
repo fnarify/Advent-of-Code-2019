@@ -1,4 +1,3 @@
-without doors
 
 starting from key @:
 dist from @ to a: 96

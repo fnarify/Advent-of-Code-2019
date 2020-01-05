@@ -1,159 +1,129 @@
 
 starting from key @:
-dist from @ to c: 150
-dist from @ to f: 214
 dist from @ to h: 80
 dist from @ to k: 28
-dist from @ to n: 62
-dist from @ to o: 182
-dist from @ to t: 202
 dist from @ to v: 46
 dist from @ to x: 12
+ -smallest dist to x is 12
 
 starting from key a:
 dist from a to e: 70
 dist from a to g: 142
-dist from a to q: 160
-dist from a to y: 170
+ -smallest dist to e is 70
 
 starting from key b:
+ -no keys can be moved to
 
 starting from key c:
-dist from c to f: 144
-dist from c to h: 228
-dist from c to k: 178
 dist from c to n: 88
 dist from c to o: 112
-dist from c to t: 132
-dist from c to v: 104
-dist from c to x: 160
+ -smallest dist to n is 88
 
 starting from key d:
 dist from d to s: 20
+ -smallest dist to s is 20
 
 starting from key e:
 dist from e to a: 70
 dist from e to g: 76
-dist from e to q: 94
-dist from e to y: 104
+ -smallest dist to a is 70
 
 starting from key f:
-dist from f to c: 144
-dist from f to h: 292
-dist from f to k: 242
-dist from f to n: 152
 dist from f to o: 32
 dist from f to t: 24
-dist from f to v: 168
-dist from f to x: 224
+ -smallest dist to t is 24
 
 starting from key g:
 dist from g to a: 142
 dist from g to e: 76
 dist from g to q: 18
 dist from g to y: 28
+ -smallest dist to q is 18
 
 starting from key h:
-dist from h to c: 228
-dist from h to f: 292
 dist from h to k: 106
-dist from h to n: 140
-dist from h to o: 260
-dist from h to t: 280
 dist from h to v: 124
 dist from h to x: 92
+ -smallest dist to x is 92
 
 starting from key i:
+ -no keys can be moved to
 
 starting from key j:
+ -no keys can be moved to
 
 starting from key k:
-dist from k to c: 178
-dist from k to f: 242
 dist from k to h: 106
-dist from k to n: 90
-dist from k to o: 210
-dist from k to t: 230
 dist from k to v: 74
 dist from k to x: 38
+ -smallest dist to x is 38
 
 starting from key l:
 dist from l to r: 22
+ -smallest dist to r is 22
 
 starting from key m:
+ -no keys can be moved to
 
 starting from key n:
 dist from n to c: 88
-dist from n to f: 152
-dist from n to h: 140
-dist from n to k: 90
 dist from n to o: 120
-dist from n to t: 140
 dist from n to v: 16
-dist from n to x: 72
+ -smallest dist to v is 16
 
 starting from key o:
 dist from o to c: 112
 dist from o to f: 32
-dist from o to h: 260
-dist from o to k: 210
 dist from o to n: 120
 dist from o to t: 20
-dist from o to v: 136
-dist from o to x: 192
+ -smallest dist to t is 20
 
 starting from key p:
 dist from p to w: 94
+ -smallest dist to w is 94
 
 starting from key q:
-dist from q to a: 160
-dist from q to e: 94
 dist from q to g: 18
 dist from q to y: 42
+ -smallest dist to g is 18
 
 starting from key r:
 dist from r to l: 22
+ -smallest dist to l is 22
 
 starting from key s:
 dist from s to d: 20
+ -smallest dist to d is 20
 
 starting from key t:
-dist from t to c: 132
 dist from t to f: 24
-dist from t to h: 280
-dist from t to k: 230
-dist from t to n: 140
 dist from t to o: 20
-dist from t to v: 156
-dist from t to x: 212
+ -smallest dist to o is 20
 
 starting from key u:
+ -no keys can be moved to
 
 starting from key v:
-dist from v to c: 104
-dist from v to f: 168
 dist from v to h: 124
 dist from v to k: 74
 dist from v to n: 16
-dist from v to o: 136
-dist from v to t: 156
 dist from v to x: 56
+ -smallest dist to n is 16
 
 starting from key w:
 dist from w to p: 94
+ -smallest dist to p is 94
 
 starting from key x:
-dist from x to c: 160
-dist from x to f: 224
 dist from x to h: 92
 dist from x to k: 38
-dist from x to n: 72
-dist from x to o: 192
-dist from x to t: 212
 dist from x to v: 56
+ -smallest dist to k is 38
 
 starting from key y:
-dist from y to a: 170
-dist from y to e: 104
 dist from y to g: 28
 dist from y to q: 42
+ -smallest dist to g is 28
+
+starting from key z:
+ -no keys can be moved to

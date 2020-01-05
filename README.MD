@@ -1,6 +1,5 @@
 # Advent of Code 2019 #
 
-
 All done in C.
 
 Each program takes the input file via redirection of stdin a.exe < "input.txt", except for day 25 which uses fopen, as stdin is needed to actually play it.
