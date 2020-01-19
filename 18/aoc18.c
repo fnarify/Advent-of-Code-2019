@@ -5,10 +5,9 @@
 #include <ctype.h>
 
 #define DIM 81
-#define MID (DIM / 2)
 #define NKEY 26
 
-enum Tile      {Key = 0, Door = 1, Wall = '#', Move = '.'};
+enum Tile      {Key = 0, Door = 1, Wall = '#', Move = '.', Robot = '@'};
 enum Direction {North = 1, South = 2, West = 3, East = 4};
 
 const int vec[][2] = {
@@ -29,6 +28,23 @@ struct Queue {
 };
 typedef struct Queue Queue;
 
+/**
+ * Function headers
+ */
+int  qempty   (Queue *);
+void enq      (Queue *, int);
+int  deq      (Queue *);
+int  istype   (char);
+int  contain  (char, int);
+void addkey   (char, int *);
+void remkey   (char, int *);
+int  allkeyfnd(int);
+char showdist (int *, int, Point *, char, int, int);
+void search   (char [DIM][DIM + 3], int, int, int, Queue *, int *, int);
+
+/**
+ * Queue functions
+ */
 int qempty(Queue *q)
 {
     return q->front > q->rear;
@@ -56,6 +72,9 @@ int deq(Queue *q)
     return q->val[q->front++];
 }
 
+/**
+ * Key functions
+ */
 int istype(char c)
 {
     return isalpha(c) ? islower(c) ? Key : Door : c;
@@ -63,12 +82,17 @@ int istype(char c)
 
 int contain(char c, int keys)
 {
-    return keys && (1 << (tolower(c) - 'a'));
+    return keys & (1 << (tolower(c) - 'a'));
 }
 
 void addkey(char c, int *keys)
 {
     *keys |= 1 << (tolower(c) - 'a');
+}
+
+void remkey(char c, int *keys)
+{
+    *keys &= ~(1 << (tolower(c) - 'a'));
 }
 
 int allkeyfnd(int keys)
@@ -137,10 +161,11 @@ void search(char maze[DIM][DIM + 3], int x, int y, int w, Queue *que, int *dist,
             pos = maze[ny][nx];
 
             // don't need bounds checks as they're all walls
-            if (!dist[next] && istype(pos) != Wall)
+            if ((!dist[next] || dist[cur] + 1 < dist[next]) && pos != Wall)
             {
                 dist[next] = dist[cur] + 1;
-                if (pos == Move || (istype(pos) == Door && contain(pos, keys)))
+                // we don't add keys that we already have
+                if (pos == Move || (contain(pos, keys) && isalpha(pos)))
                 {
                     enq(que, nx);
                     enq(que, ny);
@@ -153,7 +178,7 @@ void search(char maze[DIM][DIM + 3], int x, int y, int w, Queue *que, int *dist,
 int main()
 {
     const int lsize = 'z' + 1;
-    int i, j, msize, fndkey = 0, min, cmin;
+    int i, j, msize, fndkey = 0, min, cmin, rx, ry;
     char maze[DIM][DIM + 3];
     int **dist;
     Queue *que;
@@ -163,6 +188,7 @@ int main()
     while (fgets(maze[i++], sizeof(maze[0]), stdin)) {;}
 
     // record key and door locations -- keys are lowercase, doors are uppercase
+    rx = ry = 0;
     for (i = 0; i < DIM; i++)
     {
         for (j = 0; j < DIM; j++)
@@ -171,6 +197,11 @@ int main()
             {
                 loc[(int) maze[i][j]].x = j;
                 loc[(int) maze[i][j]].y = i;
+            }
+            if (maze[i][j] == Robot)
+            {
+                rx = j;
+                ry = i;
             }
         }
     }
@@ -193,7 +224,7 @@ int main()
     // fill dist array with distance from each key (and origin) to every other reachable key
     // i.e, we ignore keys that are blocked by doors or other keys
     min = cmin = INT_MAX;
-    search(maze, MID, MID, DIM, que, dist[NKEY], fndkey);
+    search(maze, rx, ry, DIM, que, dist[NKEY], fndkey);
     showdist(dist[NKEY], DIM, loc, '@', fndkey, 1);
     for (i = 'a'; i <= 'z'; i++)
     {
